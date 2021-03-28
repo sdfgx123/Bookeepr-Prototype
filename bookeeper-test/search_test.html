@@ -10,7 +10,13 @@
     <h1>웹문서 검색 테스트</h1>
     <p></p>
     <br><br><br>
-    <div id="book"></div>
+    <div id="title"></div>
+    <div id="thumbnail"></div>
+    <br>
+    <div id="contents"></div>
+    <br><br><br>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
@@ -42,8 +48,10 @@
         .done(function (msg) {
             console.log(msg.documents[1].title);
             console.log(msg.documents[1].thumbnail);
-            $( "#book" ).append( "<strong>" + msg.documents[1].title + "</strong>" );
-            $( "#book" ).append( "<img src='" + msg.documents[1].thumbnail + "'/>" );
+            console.log(msg.documents[1].contetns);
+            $( "#title" ).append( "<strong>" + msg.documents[1].title + "</strong>" );
+            $( "#thumbnail" ).append( "<img src='" + msg.documents[1].thumbnail + "'/>" );
+            $( "#contents" ).append( "<strong>" + msg.documents[1].contents + "</strong>" );
 
 
         });
